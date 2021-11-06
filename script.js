@@ -28,3 +28,77 @@ function postBlock()
     }	
     
 }
+
+
+function darkTheme2()
+{
+    var v = document.getElementById("ftr");
+    v.className += "darkTheme";    
+    if (document.getElementById("ftr").classList.contains('bg-dark'))
+    {
+        Element.classList.replace("bg-dark", "bg-light");
+    }
+    
+
+}
+
+function darkTheme(id, oldClass, newClass) {
+    var id = "ftr";
+    var oldClass = "bg-dark";
+    var newClass = "bg-light";
+    var elem = $(`#${id}`);
+    if (elem.hasClass(oldClass)) {
+        elem.removeClass(oldClass);
+    }
+    elem.addClass(newClass);
+
+    var oldText = "text-white";
+    var newText = "text-black";
+
+    var elem = $(`#${id}`);
+    if (elem.hasClass(oldText)) {
+        elem.removeClass(oldText);
+    }
+    elem.addClass(newText);
+}
+
+function lightTheme(id, oldClass, newClass) {
+    var id = "ftr";
+    var oldClass = "bg-light";
+    var newClass = "bg-dark";
+    var elem = $(`#${id}`); 
+    if (elem.hasClass(oldClass)) {
+        elem.removeClass(oldClass);
+    }
+    elem.addClass(newClass);
+
+    var id = "ftr";
+    var oldText = "text-black";
+    var newText = "text-white";
+
+    if (elem.hasClass(oldText)) {
+        elem.removeClass(oldText);
+    }
+    elem.addClass(newText);
+
+
+}
+ 
+$(document).ready(function() {
+    $("#darkmode").click(function() {
+        replaceClass("container", "light", "dark");
+    });
+ 
+    $("#lightmode").click(function() {
+        replaceClass("container", "dark", "light");
+    });
+});
+
+
+
+$(function () {
+    $(document).scroll(function () {
+      var $nav = $(".navbar-fixed-top");
+      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    });
+  });

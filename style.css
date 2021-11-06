@@ -116,6 +116,24 @@
     }
 }
 
+
+.navbar-fixed-top.scrolled {
+   /* background-color: #fff !important;
+    /*transition: background-color 200ms linear;
+    animation-name: showLinear;*/
+    animation-duration: 2s;
+}
+
+@keyframes showLinear {
+    0%{
+        
+    }
+    100%{
+        padding-bottom:0%;
+    }
+    
+}
+
 .container1 {
     position: relative;
     text-align: center;
